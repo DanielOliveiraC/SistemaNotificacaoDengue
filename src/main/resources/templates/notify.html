@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{style.css}">
+    <title>Forms</title>
+</head>
+
+<body>
+
+<div class="menu">
+    <a th:href="@{/home}">Início</a>
+    <a th:href="@{/notificar}">Notificar</a>
+    <a href="#atualizar-notificacao">Atualizar Notificação</a>
+    <a href="#listar-notificacoes">Listar Notificações</a>
+</div>
+
+
+<h1>Formulário de Notificação</h1>
+<form>
+    <h2>Dados Gerais</h2>
+    <label for="tipo-notificacao">1. Tipo de Notificação:</label>
+    <input type="text" id="tipo-notificacao" name="tipo-notificacao"><br><br>
+
+    <label for="agravo-doenca">2. Agravo/Doença:</label>
+    <select id="agravo-doenca" name="agravo-doenca" required>
+        <option value="dengue">Dengue</option>
+        <option value="chikungunya">Chikungunya</option>
+    </select><br><br>
+
+    <label for="uf">4. UF:</label>
+    <input type="text" id="uf" name="uf" required><br><br>
+
+    <label for="municipio-notificacao">5. Município de Notificação:</label>
+    <input type="text" id="municipio-notificacao" name="municipio-notificacao" required><br><br>
+
+    <label for="unidade-saude">6. Unidade de Saúde (ou outra fonte notificadora):</label>
+    <input type="text" id="unidade-saude" name="unidade-saude" required><br><br>
+
+    <label for="codigo-cid10">Código (CID10):</label>
+    <input type="text" id="codigo-cid10" name="codigo-cid10"><br><br>
+
+    <label for="data-notificacao">3. Data da Notificação:</label>
+    <input type="date" id="data-notificacao" name="data-notificacao" required><br><br>
+
+    <label for="codigo-ibge">Código (IBGE):</label>
+    <input type="text" id="codigo-ibge" name="codigo-ibge"><br><br>
+
+    <label for="data-primeiros-sintomas">7. Data dos Primeiros Sintomas:</label>
+    <input type="date" id="data-primeiros-sintomas" name="data-primeiros-sintomas"><br><br>
+
+    <h2>Notificação Individual</h2>
+
+    <label for="nome_paciente">8. Nome do Paciente:</label>
+    <input type="text" id="nome_paciente" name="nome_paciente" required><br><br>
+    <label for="data_nascimento">9. Data de Nascimento:</label>
+    <input type="date" id="data_nascimento" name="data_nascimento"><br><br>
+    <label for="idade">10. Idade:</label>
+    <input type="number" id="idade" name="idade"><br><br>
+    <label for="sexo">11. Sexo:</label>
+    <select id="sexo" name="sexo">
+        <option value="M">Masculino</option>
+        <option value="F">Feminino</option>
+        <option value="I">Ignorado</option>
+    </select><br><br>
+    <label for="gestante">12. Gestante:</label>
+    <select id="gestante" name="gestante">
+        <option value="1">1º Trimestre</option>
+        <option value="2">2º Trimestre</option>
+        <option value="3">3º Trimestre</option>
+        <option value="4">Idade gestacional ignorada</option>
+        <option value="5">Não</option>
+        <option value="6">Não se aplica</option>
+        <option value="9">Ignorado</option>
+    </select><br><br>
+    <label for="raca">13. Raça/Cor:</label>
+    <select id="raca" name="raca">
+        <option value="1">Branca</option>
+        <option value="2">Preta</option>
+        <option value="3">Amarela</option>
+        <option value="4">Parda</option>
+        <option value="5">Indígena</option>
+        <option value="9">Ignorado</option>
+    </select><br><br>
+    <label for="escolaridade">14. Escolaridade:</label>
+    <select id="escolaridade" name="escolaridade">
+        <option value="1">Analfabeto</option>
+        <option value="2">Até 4ª série</option>
+        <option value="3">5ª à 8ª série</option>
+        <option value="4">9ª à 12ª série</option>
+        <option value="5">Superior incompleto</option>
+        <option value="6">Superior completo</option>
+        <option value="9">Ignorado</option>
+    </select><br><br>
+    <label for="numero_sus">15. Número do cartão SUS: </label>
+    <input type="text" id="numero_sus" name="numero_sus"><br><br>
+    <label for="nome_mae">16. Nome da Mãe:</label>
+    <input type="text" id="nome_mae" name="nome_mae" required><br><br>
+
+
+    <h2>Dados de Residência</h2>
+    <label for="uf">17. UF:</label>
+    <input type="text" id="uf" name="uf" required><br><br>
+
+    <label for="municipio">18. Município de Residência:</label>
+    <input type="text" id="municipio" name="municipio" required><br><br>
+
+    <label for="codigo_ibge">Código (IBGE):</label>
+    <input type="text" id="codigo_ibge" name="codigo_ibge"><br><br>
+
+    <label for="distrito">Distrito:</label>
+    <input type="text" id="distrito" name="distrito"><br><br>
+
+    <label for="bairro">Bairro:</label>
+    <input type="text" id="bairro" name="bairro"><br><br>
+
+    <label for="logradouro">Logradouro (rua, avenida,...):</label>
+    <input type="text" id="logradouro" name="logradouro"><br><br>
+
+    <label for="numero">Número:</label>
+    <input type="text" id="numero" name="numero"><br><br>
+
+    <label for="complemento">Complemento (apto., casa,...):</label>
+    <input type="text" id="complemento" name="complemento"><br><br>
+
+    <label for="geo_campo_1">Geo campo 1:</label>
+    <input type="text" id="geo_campo_1" name="geo_campo_1"><br><br>
+
+    <label for="geo_campo_2">Geo campo 2:</label>
+    <input type="text" id="geo_campo_2" name="geo_campo_2"><br><br>
+
+    <label for="ponto_referencia">Ponto de Referência:</label>
+    <input type="text" id="ponto_referencia" name="ponto_referencia"><br><br>
+
+    <label for="cep">CEP:</label>
+    <input type="text" id="cep" name="cep"><br><br>
+
+    <label for="telefone">28. Telefone</label>
+    <input type="text" id="telefone" name="telefone"><br><br>
+
+    <label for="zona">29. Zona</label>
+
+    <select id="zona" name="zona">
+        <option value="1">Urbana</option>
+        <option value="2">Rural</option>
+        <option value="3">Periurbana</option>
+        <option value="3">Ignorado</option>
+    </select>
+
+    <label for="pais">30. País:</label>
+    <input type="text" id="pais" name="pais"><br>
+
+    <button type="submit">Manda bala</button>
+</form>
+</body>
+</html>
