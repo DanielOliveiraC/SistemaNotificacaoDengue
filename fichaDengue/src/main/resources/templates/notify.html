@@ -11,44 +11,50 @@
 <div class="menu">
     <a th:href="@{/home}">Início</a>
     <a th:href="@{/notificar}">Notificar</a>
-    <a href="#atualizar-notificacao">Atualizar Notificação</a>
-    <a href="#listar-notificacoes">Listar Notificações</a>
+    <a href="#">Atualizar Notificação</a>
+    <a href="#">Listar Notificações</a>
 </div>
 
 
 <h1>Formulário de Notificação</h1>
-<form>
+<form th:action="@{/salvar}" th:object="${generalDataModel}" method="post">
+
+    <!-- General Data Model-->
     <h2>Dados Gerais</h2>
-    <label for="tipo-notificacao">1. Tipo de Notificação:</label>
-    <input type="text" id="tipo-notificacao" name="tipo-notificacao"><br><br>
+    <label for="tipo-notificacao" >1. Tipo de Notificação:</label>
+    <input type="text" id="tipo-notificacao" name="tipo-notificacao" th:field="*{tipoNotificacao}"><br><br>
 
     <label for="agravo-doenca">2. Agravo/Doença:</label>
-    <select id="agravo-doenca" name="agravo-doenca" required>
+    <select id="agravo-doenca" name="agravo-doenca" th:field="*{agravo}" required>
         <option value="dengue">Dengue</option>
         <option value="chikungunya">Chikungunya</option>
     </select><br><br>
 
     <label for="uf">4. UF:</label>
-    <input type="text" id="uf" name="uf" required><br><br>
+    <input type="text" id="ufNotify" name="uf" th:field="*{uf}" required><br><br>
 
     <label for="municipio-notificacao">5. Município de Notificação:</label>
-    <input type="text" id="municipio-notificacao" name="municipio-notificacao" required><br><br>
+    <input type="text" id="municipio-notificacao" name="municipio-notificacao" th:field="*{municipioNotificacao}" required><br><br>
 
     <label for="unidade-saude">6. Unidade de Saúde (ou outra fonte notificadora):</label>
-    <input type="text" id="unidade-saude" name="unidade-saude" required><br><br>
+    <input type="text" id="unidade-saude" name="unidade-saude" th:field="*{unidadeSaude}" required><br><br>
 
     <label for="codigo-cid10">Código (CID10):</label>
-    <input type="text" id="codigo-cid10" name="codigo-cid10"><br><br>
+    <input type="text" id="codigo-cid10" name="codigo-cid10" th:field="*{codigoCID}"><br><br>
 
     <label for="data-notificacao">3. Data da Notificação:</label>
-    <input type="date" id="data-notificacao" name="data-notificacao" required><br><br>
+    <input type="date" id="data-notificacao" name="data-notificacao" th:field="*{dataNotificacao}" required><br><br>
 
     <label for="codigo-ibge">Código (IBGE):</label>
-    <input type="text" id="codigo-ibge" name="codigo-ibge"><br><br>
+    <input type="text" id="codigo-ibge" name="codigo-ibge" th:field="*{codigoIBGE}"><br><br>
 
     <label for="data-primeiros-sintomas">7. Data dos Primeiros Sintomas:</label>
-    <input type="date" id="data-primeiros-sintomas" name="data-primeiros-sintomas"><br><br>
+    <input type="date" id="data-primeiros-sintomas" name="data-primeiros-sintomas" th:field="*{dataPrimeirosSintomas}"><br><br>
 
+    <!--  ----------------------------------------------------------------------------------  -->
+
+
+    <!-- Individual Notification Model -->
     <h2>Notificação Individual</h2>
 
     <label for="nome_paciente">8. Nome do Paciente:</label>
@@ -97,7 +103,9 @@
     <label for="nome_mae">16. Nome da Mãe:</label>
     <input type="text" id="nome_mae" name="nome_mae" required><br><br>
 
+    <!--  ----------------------------------------------------------------------------------  -->
 
+    <!-- Residence Data Model -->
     <h2>Dados de Residência</h2>
     <label for="uf">17. UF:</label>
     <input type="text" id="uf" name="uf" required><br><br>
@@ -149,7 +157,9 @@
 
     <label for="pais">30. País:</label>
     <input type="text" id="pais" name="pais"><br>
+    <!--  ----------------------------------------------------------------------------------  -->
 
+    <!-- Botão submit -->
     <button type="submit">Manda bala</button>
 </form>
 </body>
