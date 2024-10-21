@@ -1,7 +1,7 @@
 package com.ifpi.fichadengue.models;
 
 import org.springframework.format.annotation.DateTimeFormat;
-
+import com.ifpi.fichadengue.models.*;
 import java.util.Date;
 import java.util.UUID;
 
@@ -18,7 +18,8 @@ public class GeneralDataModel {
     private String codigoIBGE;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataPrimeirosSintomas;
-
+    private IndividualNotificationModel individualNotificationModel;
+    
     // Construtor
     public GeneralDataModel() {}
 

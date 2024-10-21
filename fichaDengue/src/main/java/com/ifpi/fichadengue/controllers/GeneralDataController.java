@@ -1,6 +1,8 @@
 package com.ifpi.fichadengue.controllers;
 
 import com.ifpi.fichadengue.models.GeneralDataModel;
+import com.ifpi.fichadengue.models.IndividualNotificationModel;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +15,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Controller
-public class fichaController {
+public class GeneralDataController {
 
     private List<GeneralDataModel> generalDataModelList = new ArrayList<>();
 
@@ -24,7 +26,7 @@ public class fichaController {
     }
 
     @PostMapping("/salvar")
-    public String salvar(@ModelAttribute GeneralDataModel generalDataModel, Model model) {
+    public String salvar(@ModelAttribute GeneralDataModel generalDataModel, IndividualNotificationModel individualNotificationModel, Model model) {
         generalDataModel.setId(UUID.randomUUID());
         generalDataModelList.add(generalDataModel);
         String ver = generalDataModel.toString();
