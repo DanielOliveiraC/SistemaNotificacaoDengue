@@ -1,7 +1,6 @@
 package com.ifpi.fichadengue.controllers;
 
-import com.ifpi.fichadengue.models.GeneralDataModel;
-import com.ifpi.fichadengue.models.IndividualNotificationModel;
+import com.ifpi.fichadengue.models.FormsModel;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,21 +14,21 @@ import java.util.List;
 import java.util.UUID;
 
 @Controller
-public class GeneralDataController {
+public class FormDataController {
 
-    private List<GeneralDataModel> generalDataModelList = new ArrayList<>();
+    private List<FormsModel> formsModelList = new ArrayList<>();
 
     @GetMapping("/notificar")
     public String exibirNotificacao(Model model) {
-        model.addAttribute("generalDataModel", new GeneralDataModel());
+        model.addAttribute("formsModel", new FormsModel());
         return "notify";
     }
 
     @PostMapping("/salvar")
-    public String salvar(@ModelAttribute GeneralDataModel generalDataModel, IndividualNotificationModel individualNotificationModel, Model model) {
-        generalDataModel.setId(UUID.randomUUID());
-        generalDataModelList.add(generalDataModel);
-        String ver = generalDataModel.toString();
+    public String salvar(@ModelAttribute FormsModel formsModel, Model model) {
+        formsModel.setId(UUID.randomUUID());
+        formsModelList.add(formsModel);
+        String ver = formsModel.toString();
         System.out.println(ver);
         return "redirect:/notificar";
     }
