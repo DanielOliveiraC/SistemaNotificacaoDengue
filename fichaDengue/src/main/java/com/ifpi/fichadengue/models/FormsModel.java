@@ -1,11 +1,11 @@
 package com.ifpi.fichadengue.models;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import com.ifpi.fichadengue.models.*;
 import java.util.Date;
 import java.util.UUID;
 
-public class GeneralDataModel {
+public class FormsModel {
+    // Dados Gerais - Informações
     private UUID id;
     private int tipoNotificacao;
     private String agravo;
@@ -18,10 +18,38 @@ public class GeneralDataModel {
     private String codigoIBGE;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dataPrimeirosSintomas;
-    private IndividualNotificationModel individualNotificationModel;
+
+    // Notificação Individual - Informações 
+    private String nomePaciente;
+    private Date dataNascimento;
+    private int idade;
+    private String sexo;
+    private String gestante;
+    private String raca;
+    private String escolaridade;
+    private String cartaoSus;
+    private String nomeMae;
+
+    // Dados de Residência - Informações
+    private String ufResidence;
+    private String municipioResidencia;
+    private String codigoIbgeResidence;
+    private String distrito;
+    private String bairro;
+    private String logradouro;
+    private int numeroResidencia;
+    private String complemento;
+    private String geoCampo1;
+    private String geoCampo2;
+    private String pontoReferencia;
+    private String Cep;
+    private String telefone;
+    private String zona;
+    private String pais;
     
+
     // Construtor
-    public GeneralDataModel() {}
+    public FormsModel() {}
 
     // Getters e Setters
     public UUID getId() {
@@ -119,4 +147,8 @@ public class GeneralDataModel {
                 ", dataPrimeirosSintomas=" + dataPrimeirosSintomas +
                 '}';
     }
+
+
+    
 }
+

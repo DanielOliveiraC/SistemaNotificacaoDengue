@@ -17,7 +17,7 @@
 
 <div class="formulario">
 <h1>Formulário de Notificação</h1>
-<form th:action="@{/salvar}" th:object="${generalDataModel}" method="post">
+<form th:action="@{/salvar}" th:object="${formsModel}" method="post">
 
     <!-- General Data Model-->
     <h2>Dados Gerais</h2>
@@ -160,7 +160,7 @@
     <!--  ----------------------------------------------------------------------------------  -->
 
     <!-- Botão submit -->
-    <button type="submit">Manda bala</button>
+    <button type="submit">Enviar</button>
 </form>
 
 </div>
